@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tris Dinámico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta estático para previsualización básica -->
+  <meta property="og:title" content="¡Juega Tris y gana hoy!" />
+  <meta property="og:description" content="Regístrate en Tu Lotero y recibe $15 gratis. Código: 817100343" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/006600/ffffff.png&text=Suerte+con+Tu+Lotero" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #0a5617, #063c10);
+      color: white;
+      text-align: center;
+      padding-top: 50px;
+    }
+    .sorteo {
+      background: #ffffff22;
+      border-radius: 20px;
+      padding: 20px;
+      margin: auto;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 20px #00000066;
+    }
+    .texto {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .numeros {
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .numero {
+      background: white;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .fecha {
+      margin-top: 15px;
+      font-size: 1rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="sorteo">
+    <div class="texto" id="texto"></div>
+    <div class="numeros" id="numeros"></div>
+    <div class="fecha" id="fecha"></div>
+  </div>
+
+  <script>
+    const textos = [
+      "Usa el cupón 817100343 y regístrate en la app Tu Lotero para tener $15 gratis para usar en los sorteos.",
+      "¡Tu suerte comienza aquí! Usa el código 817100343 y gana con Tu Lotero.",
+      "Regístrate en Tu Lotero con el cupón 817100343 y recibe $15 gratis para jugar.",
+      "Tu oportunidad de ganar empieza ahora. Código: 817100343 en Tu Lotero.",
+      "Recibe $15 gratis al registrarte en Tu Lotero con el código 817100343.",
+      "Tu boleto a la suerte: usa el cupón 817100343 y juega gratis en Tu Lotero.",
+      "Comienza ganando: $15 gratis con el cupón 817100343 en Tu Lotero."
+    ];
+
+    // Generar texto aleatorio
+    const textoElegido = textos[Math.floor(Math.random() * textos.length)];
+    document.getElementById("texto").innerText = textoElegido;
+
+    // Generar 5 números aleatorios
+    const nums = Array.from({length: 5}, () => Math.floor(Math.random() * 10));
+    const numerosHTML = nums.map(n => `<div class="numero">${n}</div>`).join("");
+    document.getElementById("numeros").innerHTML = numerosHTML;
+
+    // Mostrar fecha actual
+    const fecha = new Date();
+    const fechaFormateada = fecha.toLocaleDateString('es-MX', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+    document.getElementById("fecha").innerText = `Sorteo del ${fechaFormateada}`;
+
+    // Redirigir a los 2 segundos
+    setTimeout(() => {
+      window.location.href = "https://tulotero.mx/regalo?a=Juan%20Alberto&t=817100343";
+    }, 2000);
+
+    const textos = [
+  "Usa el cupón 817100343 y regístrate en la app Tu Lotero para tener $15 gratis para usar en los sorteos.",
+  "¡Tu suerte comienza aquí! Usa el código 817100343 y gana con Tu Lotero.",
+  "Regístrate en Tu Lotero con el cupón 817100343 y recibe $15 gratis para jugar.",
+  "Tu oportunidad de ganar empieza ahora. Código: 817100343 en Tu Lotero.",
+  "Recibe $15 gratis al registrarte en Tu Lotero con el código 817100343.",
+  "Tu boleto a la suerte: usa el cupón 817100343 y juega gratis en Tu Lotero.",
+  "Comienza ganando: $15 gratis con el cupón 817100343 en Tu Lotero."
+];
+  </script>
+</body>
+</html>
